@@ -1,6 +1,6 @@
-import './state-demo.component.scss';
-import {CounterExample} from "./counter-example/counter-example.component.tsx";
-import {ObjectExample} from "./object-example/object-example.component.tsx";
+import './state-demo.scss';
+import {CounterExample} from "./counter-example/counter-example.tsx";
+import {ObjectExample} from "./object-example/object-example.tsx";
 
 export const StateDemo = () => {
     return (
