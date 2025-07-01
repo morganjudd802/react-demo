@@ -1,0 +1,18 @@
+.home-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1 auto;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

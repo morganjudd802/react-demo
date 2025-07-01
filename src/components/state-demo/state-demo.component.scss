@@ -1,0 +1,44 @@
+.state-example-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 12px;
+}
+
+.state-example-container:not(:last-child) {
+  border-bottom: 1px solid var(--box-shadow-default);
+}
+
+.control-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: auto;
+  align-items
+  : center;
+  gap: 12px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-button {
+  width: 40px;
+  border-radius: 3px 0 0 3px;
+}
+
+.right-button {
+  width: 40px;
+  border-radius: 0 3px 3px 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.short-input {
+  width: 50px;
+}

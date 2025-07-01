@@ -1,0 +1,34 @@
+:root {
+    /* Colors */
+    --color-primary-main: #536877;
+
+    --color-secondary-main: #66bb6a;
+
+    --color-text-primary: #202124;
+    --color-text-disabled: #9aa0a6;
+
+    --color-text-inverse-primary: #FFF;
+    --color-text-inverse-active: #9fc6c0;
+
+    --color-background-default: #f4f2f0;
+    --color-background-primary: #FFF;
+
+    --color-error: #ef5350;
+    --color-warning: #ff9800;
+    --color-success: #4caf50;
+
+    --box-shadow-default: rgba(219, 233, 233, 0.75);
+
+    /* Typography */
+    --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+}
