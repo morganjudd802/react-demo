@@ -1,4 +1,4 @@
-import './layout.component.scss';
+import './Layout.scss';
 import {NavLink, Outlet} from "react-router-dom";
 
 export const Layout = () => {

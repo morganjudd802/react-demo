@@ -1,4 +1,4 @@
-import './home.component.scss';
+import './Home.scss';
 import pepeHappy from '@/assets/pepe-happy.png';
 
 export const Home = () => {

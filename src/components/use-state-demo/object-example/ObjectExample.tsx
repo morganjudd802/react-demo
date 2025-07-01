@@ -1,42 +1,30 @@
 import {type ChangeEvent, useState} from "react";
 
-export class DemoObject {
-    public firstName: string;
-    public lastName: string;
-    public age: number;
-
-    constructor(firstName: string, lastName: string, age: number) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-    }
-}
-
 export const ObjectExample = () => {
-    const ObjectUpdater = (initialValue: DemoObject) => {
+    type DemoObject = {
+        firstName: string;
+        lastName: string;
+        age: number;
+    }
+
+    const useObjectUpdater = (initialValue: DemoObject) => {
         const [object, updateValue] = useState<DemoObject>(initialValue);
 
-        const updateFirstName = (val: string) => updateValue(obj => {
-            return new DemoObject(
-                val,
-                obj.lastName,
-                obj.age
-            );
-        });
-        const updateLastName = (val: string) => updateValue(obj => {
-            return new DemoObject(
-                obj.firstName,
-                val,
-                obj.age
-            );
-        });
-        const updateAge = (val: number) => updateValue(obj => {
-            return new DemoObject(
-                obj.firstName,
-                obj.lastName,
-                val
-            );
-        });
+        const updateFirstName = (val: string) => updateValue(obj => ({
+            ...obj,
+            firstName: val
+        }));
+
+        const updateLastName = (val: string) => updateValue(obj => ({
+            ...obj,
+            lastName: val
+        }));
+
+        const updateAge = (val: number) => updateValue(obj => ({
+            ...obj,
+            age: val
+        }));
+
         const reset = () => updateValue(initialValue);
 
         return {object, updateFirstName, updateLastName, updateAge, reset};
@@ -48,7 +36,7 @@ export const ObjectExample = () => {
         updateLastName,
         updateAge,
         reset
-    } = ObjectUpdater(new DemoObject('First', 'Last', 100));
+    } = useObjectUpdater({ firstName: 'First', lastName: 'Last', age: 100 });
     const handleFirstNameInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         updateFirstName(event.target.value);
     }

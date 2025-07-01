@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .sidebar-container {
   nav {
     a {
@@ -15,7 +19,6 @@
       text-decoration: none;
       transition: all 0.2s ease;
 
-      // This targets the active NavLink
       &.active {
         color: var(--color-text-inverse-active);
         background-color: rgba(0, 0, 0, 0.04);
@@ -28,9 +31,4 @@
       }
     }
   }
-}
-
-/* Remove spinner arrows for Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
 }

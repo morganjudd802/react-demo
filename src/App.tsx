@@ -1,8 +1,8 @@
 import './App.scss'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {Layout} from "./components/layout/layout.component.tsx";
-import {Home} from "./components/home/home.component.tsx";
-import {StateDemo} from "./components/state-demo/state-demo.component.tsx";
+import {Layout} from "./components/layout/Layout.tsx";
+import {Home} from "./components/home/Home.tsx";
+import {UseStateDemo} from "./components/use-state-demo/UseStateDemo.tsx";
 
 const App = () => {
     return (
@@ -11,7 +11,7 @@ const App = () => {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
 
-                    <Route path="state-demo" element={<StateDemo />} />
+                    <Route path="state-demo" element={<UseStateDemo />} />
 
                     {/* 404 route */}
                     {/* <Route path="*" element={<NotFound />} />*/}

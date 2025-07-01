@@ -1,7 +1,7 @@
 import {type ChangeEvent, useState} from "react";
 
 export const CounterExample = () => {
-    const IncrementalCounter = (initialValue: number = 0) => {
+    const useIncrementalCounter = (initialValue: number = 0) => {
         const [count, setCount] = useState<number>(initialValue);
 
         const increment = () => setCount(val => val + 1);
@@ -12,7 +12,7 @@ export const CounterExample = () => {
         return {count, increment, decrement, reset, setValue};
     }
 
-    const { count, increment, decrement, reset, setValue } = IncrementalCounter(0);
+    const { count, increment, decrement, reset, setValue } = useIncrementalCounter(0);
     const handleCounterInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         const val = parseInt(event.target.value) || 0;
         setValue(val);
