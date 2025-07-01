@@ -1,8 +1,8 @@
-import './state-demo.scss';
-import {CounterExample} from "./counter-example/counter-example.tsx";
-import {ObjectExample} from "./object-example/object-example.tsx";
+import './UseStateDemo.scss';
+import {CounterExample} from "./counter-example/CounterExample.tsx";
+import {ObjectExample} from "./object-example/ObjectExample.tsx";
 
-export const StateDemo = () => {
+export const UseStateDemo = () => {
     return (
         <>
             <div className={'state-example-container'}>
