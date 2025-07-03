@@ -11,7 +11,7 @@ export const Layout = () => {
                 <div className={'sidebar-container'}>
                     <nav>
                         <NavLink to="/">Home</NavLink>
-                        <NavLink to="state-demo">Hook Example: <code>useState</code></NavLink>
+                        <NavLink to="use-state-demo">Hook Example: <code>useState</code></NavLink>
                     </nav>
                 </div>
                 <div className={'content-container'}>

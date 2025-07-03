@@ -11,7 +11,7 @@ const App = () => {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
 
-                    <Route path="state-demo" element={<UseStateDemo />} />
+                    <Route path="use-state-demo" element={<UseStateDemo />} />
 
                     {/* 404 route */}
                     {/* <Route path="*" element={<NotFound />} />*/}
