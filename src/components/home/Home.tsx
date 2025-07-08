@@ -1,5 +1,5 @@
 import './Home.scss';
-import pepeHappy from '@/assets/pepe-happy.png';
+import penguin from '@/assets/penguin.png';
 
 export const Home = () => {
     return (
@@ -9,7 +9,7 @@ export const Home = () => {
               <p>This is an attempt to learn how React works and to create demos for all its main features.</p>
               <p>Use the navigation on the left to view various examples.</p>
               <div className={'image-container'}>
-                  <img src={pepeHappy} alt={'yee'} width={'50px'} />
+                  <img src={penguin} alt={'yee'} width={'50px'} />
               </div>
           </div>
       </div>
