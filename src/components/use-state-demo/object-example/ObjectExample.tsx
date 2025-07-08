@@ -1,16 +1,11 @@
-import {type ChangeEvent, type RefObject, useRef, useState} from "react";
+import {type ChangeEvent, type RefObject, useState} from "react";
+import type {DemoObject} from "../../../models/demo-object.tsx";
 
-export const ObjectExample = () => {
-    type DemoObject = {
-        firstName: string;
-        lastName: string;
-        age: number;
-    }
+type ObjectExampleProps = {
+    demoObject: RefObject<DemoObject>;
+}
 
-    const firstName: RefObject<string> = useRef('First');
-    const lastName: RefObject<string> = useRef('Last');
-    const age: RefObject<number> = useRef(30);
-
+export const ObjectExample = ({demoObject}: ObjectExampleProps) => {
     const useObjectUpdater = (initialValue: DemoObject) => {
         const [object, updateValue] = useState<DemoObject>(initialValue);
 
@@ -40,7 +35,7 @@ export const ObjectExample = () => {
         updateLastName,
         updateAge,
         reset
-    } = useObjectUpdater({ firstName: firstName.current, lastName: lastName.current, age: age.current });
+    } = useObjectUpdater({ firstName: demoObject.current.firstName, lastName: demoObject.current.lastName, age: demoObject.current.age });
     const handleFirstNameInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         updateFirstName(event.target.value);
     }
