@@ -11,7 +11,7 @@ export const Home = () => {
               <p>Use the navigation on the left to view various examples.</p>
               <a href={javascriptUrl}>Click here to see javascript examples</a>
               <div className={'image-container'}>
-                  <img src={penguin} alt={'yee'} width={'50px'} />
+                  <img loading="eager" src={penguin} alt={'yee'} width={'50px'} />
               </div>
           </div>
       </div>
