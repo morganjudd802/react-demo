@@ -38,7 +38,7 @@ let ticTacToeBoard = [
     [0, 0, 0]
 ]
 
-let ticTacToeMessage = 'Select a cell to begin';
+const ticTacToeMessage = 'Select a cell to begin';
 let winner = false;
 
 function init() {
@@ -102,7 +102,7 @@ function updateMessage(message) {
 }
 
 function playerChoice(x, y) {
-    ticTacToeMessage = '';
+    updateMessage('');
     ticTacToeBoard[x][y] = 1;
     renderTicTacToeTable();
     if(!checkVictory()) {
