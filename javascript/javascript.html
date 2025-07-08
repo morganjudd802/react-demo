@@ -2,26 +2,101 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .examples-list-container {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .example-container {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+            gap: 8px;
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid black;
+            padding: 8px;
+        }
+
+        .example-container:first-child {
+            border-top: none;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .movie-table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: fit-content;
+            padding: 4px;
+        }
+    </style>
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <script src="scripts/scripts.js"></script>
+    <script src="scripts/tic-tac-toe.js"></script>
+    <script src="scripts/movie-totals.js"></script>
     <title>Javascript Examples</title>
 </head>
 <body>
-  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-      <a href="http://localhost:5173">Click here to return to the app</a>
-      <div style="padding-bottom: 20px">
-          <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-              <h5>This is a javascript function test</h5>
-              <span id="javascript-function-target"></span>
-              <button onClick="update()">Press me to update the element above</button>
-              <button onClick="reset()">Press me to reset the element above</button>
-          </div>
-          <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-              <h5>Tic Tac Toe</h5>
-              <div id="tic-tac-toe-board"></div>
-              <span id="tic-tac-toe-message"></span>
-              <button onclick="initTicTacToe()">Reset Tic Tac Toe</button>
-          </div>
+  <div class="examples-list-container">
+      <div class="example-container">
+          <a href="http://localhost:5173">Click here to return to the app</a>
+      </div>
+      <div class="example-container">
+          <span class="title">Javascript Change / Sort Test</span>
+          <span id="javascript-function-target"></span>
+          <button onClick="update()">Press me to update the element above</button>
+          <button onClick="reset()">Press me to reset the element above</button>
+      </div>
+      <div class="example-container">
+          <span class="title">Tic Tac Toe</span>
+          <div id="tic-tac-toe-board"></div>
+          <span id="tic-tac-toe-message"></span>
+          <button onclick="initTicTacToe()">Reset Tic Tac Toe</button>
+      </div>
+      <div class="example-container">
+          <span class="title">Read and Total values from DOM</span>
+          <table class="movie-table" id="table">
+              <tr>
+                  <th>Title</th>
+                  <th>Box Office Receipts</th>
+              </tr>
+              <tr>
+                  <td>Toy Story 3</td>
+                  <td>415M</td>
+              </tr>
+              <tr>
+                  <td>Forrest Gump</td>
+                  <td>$330.1M</td>
+              </tr>
+              <tr>
+                  <td>Cars</td>
+                  <td>244.1M</td>
+              </tr>
+              <tr>
+                  <td>TBD</td>
+                  <td>NA</td>
+              </tr>
+              <tr>
+                  <td>Da Vinci Code</td>
+                  <td>217.6M</td>
+              </tr>
+          </table>
+
+          <p><strong>Answer</strong>: <span id="total-sum"></span></p>
       </div>
   </div>
 </body>
