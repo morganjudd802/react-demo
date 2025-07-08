@@ -1,4 +1,4 @@
-import {type ChangeEvent, useState} from "react";
+import {type ChangeEvent, type RefObject, useRef, useState} from "react";
 
 export const ObjectExample = () => {
     type DemoObject = {
@@ -6,6 +6,10 @@ export const ObjectExample = () => {
         lastName: string;
         age: number;
     }
+
+    const firstName: RefObject<string> = useRef('First');
+    const lastName: RefObject<string> = useRef('Last');
+    const age: RefObject<number> = useRef(30);
 
     const useObjectUpdater = (initialValue: DemoObject) => {
         const [object, updateValue] = useState<DemoObject>(initialValue);
@@ -36,7 +40,7 @@ export const ObjectExample = () => {
         updateLastName,
         updateAge,
         reset
-    } = useObjectUpdater({ firstName: 'First', lastName: 'Last', age: 100 });
+    } = useObjectUpdater({ firstName: firstName.current, lastName: lastName.current, age: age.current });
     const handleFirstNameInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         updateFirstName(event.target.value);
     }
@@ -56,6 +60,9 @@ export const ObjectExample = () => {
                 <li>Control the object properties</li>
                 <li>Update an object property</li>
                 <li>Reset the object properties</li>
+                <ul>
+                    <li>This example uses <code>useRef</code> variables for setting the initial values and for referencing on reset</li>
+                </ul>
             </ul>
             <div className={'control-container'}>
                 <span>Current Object Values:</span>
