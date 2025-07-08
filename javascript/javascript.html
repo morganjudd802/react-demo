@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <script src="scripts/scripts.js"></script>
+    <title>Javascript Examples</title>
+</head>
+<body>
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <a href="http://localhost:5173">Click here to return to the app</a>
+      <div style="padding-bottom: 20px">
+          <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+              <h5>This is a javascript function test</h5>
+              <span id="javascript-function-target"></span>
+              <button onClick="update()">Press me to update the element above</button>
+              <button onClick="reset()">Press me to reset the element above</button>
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+              <h5>Tic Tac Toe</h5>
+              <div id="tic-tac-toe-board"></div>
+              <span id="tic-tac-toe-message"></span>
+              <button onclick="initTicTacToe()">Reset Tic Tac Toe</button>
+          </div>
+      </div>
+  </div>
+</body>
+</html>

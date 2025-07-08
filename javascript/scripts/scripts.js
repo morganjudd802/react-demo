@@ -1,6 +1,6 @@
 const styles = `
     .tic-tac-toe-board {
-        background: #FFF;
+        background: #f4f2f0;
         border-radius: 6px;
     }
     
@@ -206,3 +206,5 @@ function determineWinner(player) {
     winner = true;
     renderTicTacToeTable();
 }
+
+document.addEventListener('DOMContentLoaded', init);
