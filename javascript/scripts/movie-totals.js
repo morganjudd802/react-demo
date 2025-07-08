@@ -10,7 +10,7 @@ function getMovieProfitTotal() {
             trackedTotal += value;
         }
     }
-    totalSum = `${trackedTotal}M`;
+    totalSum = `$${trackedTotal}M`;
     document.getElementById('total-sum').innerText = totalSum;
 }
 
