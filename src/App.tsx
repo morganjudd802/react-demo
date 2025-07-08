@@ -5,6 +5,7 @@ import {Home} from "./components/home/Home.tsx";
 import {UseEffectDemo} from "./components/use-effect-demo/UseEffectDemo.tsx";
 import {UseStateDemo} from "./components/use-state-demo/UseStateDemo.tsx";
 import {FormDemo} from "./components/form-demo/FormDemo.tsx";
+import {CartDemo} from "./components/cart-demo/CartDemo.tsx";
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
                         <Route path="use-state-demo" element={<UseStateDemo/>}/>
                         <Route path="use-effect-demo" element={<UseEffectDemo />} />
                         <Route path="form-demo" element={<FormDemo />} />
+                        <Route path="cart-demo" element={<CartDemo />} />
 
                         {/* 404 route */}
                         {/* <Route path="*" element={<NotFound />} />*/}
