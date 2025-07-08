@@ -87,16 +87,15 @@ export const CartDemo = () => {
                 <li>Disable controls based on state</li>
             </ul>
             <div className={'cart-container'}>
-                <h4 data-testid="total">Total Items: {totalItems}</h4>
+                <h4>Total Items: {totalItems}</h4>
                 <div className={'item-list-container'}>
                     {items.map(item => (
-                        <div key={item.id} data-testid={`item-${item.id}`} className={'item-container'}>
+                        <div key={item.id} className={'item-container'}>
                             <span className={'item-name'}>{item.name}</span>
                             <div className={'cart-controls'}>
                                 <button className={'quantity-button'}
                                         disabled={item.quantity === 0}
-                                        onClick={decrement.bind(null, item.id)}
-                                        data-testid={`remove-${item.id}`}>
+                                        onClick={decrement.bind(null, item.id)}>
                                     -
                                 </button>
                                 <input onChange={handleQuantityChange(item.id)}
@@ -104,8 +103,7 @@ export const CartDemo = () => {
                                        value={item.quantity}
                                        type='number' />
                                 <button className={'quantity-button'}
-                                        onClick={increment.bind(null, item.id)}
-                                        data-testid={`add-${item.id}`}>
+                                        onClick={increment.bind(null, item.id)}>
                                     +
                                 </button>
                             </div>
