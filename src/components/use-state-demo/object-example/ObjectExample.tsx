@@ -56,7 +56,7 @@ export const ObjectExample = ({demoObject}: ObjectExampleProps) => {
                 <li>Update an object property</li>
                 <li>Reset the object properties</li>
                 <ul>
-                    <li>This example uses <code>useRef</code> variables for setting the initial values and for referencing on reset</li>
+                    <li>This example sends a prop utilizing <code>useRef</code> for setting the initial values and for referencing on reset</li>
                 </ul>
             </ul>
             <div className={'control-container'}>
