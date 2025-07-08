@@ -7,19 +7,21 @@ import {UseStateDemo} from "./components/use-state-demo/UseStateDemo.tsx";
 
 const App = () => {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Layout />}>
-                    <Route index element={<Home />} />
+        <>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Layout/>}>
+                        <Route index element={<Home/>}/>
 
-                    <Route path="use-state-demo" element={<UseStateDemo />} />
-                    <Route path="use-effect-demo" element={<UseEffectDemo />} />
+                        <Route path="use-state-demo" element={<UseStateDemo/>}/>
+                        <Route path="use-effect-demo" element={<UseEffectDemo />} />
 
-                    {/* 404 route */}
-                    {/* <Route path="*" element={<NotFound />} />*/}
-                </Route>
-            </Routes>
-        </BrowserRouter>
+                        {/* 404 route */}
+                        {/* <Route path="*" element={<NotFound />} />*/}
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </>
     );
 }
 
