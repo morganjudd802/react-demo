@@ -14,23 +14,37 @@ const initialItems: Item[] = [
 ];
 
 export const CartDemo = () => {
-
     const useItemQuantityUpdater = () => {
-        const [items, setItems] = useState<Item[]>(initialItems);
+        // Get items from session storage OR set items to initial items array
+        const getCart = () => {
+            const cartData = sessionStorage.getItem('cart');
+            if (cartData) {
+                return JSON.parse(cartData) as Item[];
+            }
+            return initialItems;
+        };
 
+        // Set state hooks for items and totalItems
+        const [items, setItems] = useState<Item[]>(getCart());
+        const [totalItems, setTotalItems] = useState(0);
+
+        // Update displayed total when items change
         useEffect(() => {
-            getCart();
-        }, []);
+            const newTotal = items.reduce((sum, item) => sum + item.quantity, 0);
+            setTotalItems(newTotal);
+            sessionStorage.setItem('cart', JSON.stringify(items));
+        }, [items]);
 
+        // Increase item quantity by 1
         const increment = (id: number) => {
             const item = items.find(item => item.id === id);
             if (item) {
                 item.quantity++;
                 setItems([...items]);
-                setCart();
             }
         }
 
+        // Decrease item quantity by 1
         const decrement = (id: number) => {
             const item = items.find(item => item.id === id);
             if (item) {
@@ -38,10 +52,10 @@ export const CartDemo = () => {
                     item.quantity--;
                     setItems([...items]);
                 }
-                setCart();
             }
         }
 
+        // Set item quantity to user entered value
         const setQuantity = (id: number, quantity: number) => {
             if(quantity >= 0) {
                 const item = items.find(item => item.id === id);
@@ -49,28 +63,17 @@ export const CartDemo = () => {
                     item.quantity = quantity;
                     setItems([...items]);
                 }
-                setCart();
             }
         }
 
-        const getCart = () => {
-            const cartItems = sessionStorage.getItem('cart');
-            if(cartItems) {
-                setItems(JSON.parse(cartItems));
-            }
-        }
-
-        const setCart = () => {
-            sessionStorage.setItem('cart', JSON.stringify(items));
-        }
-
-        return {items, increment, decrement, setQuantity};
+        return {items, totalItems, increment, decrement, setQuantity};
     }
 
-    const { items, increment, decrement, setQuantity } = useItemQuantityUpdater();
+    // Component references
+    const { items, totalItems, increment, decrement, setQuantity } = useItemQuantityUpdater();
     const handleQuantityChange= (id: number) => (event: ChangeEvent<HTMLInputElement>) => {
-        const val = parseInt(event.target.value) || 0;
-        setQuantity(id, val);
+        const value = parseInt(event.target.value) || 0;
+        setQuantity(id, value);
     }
 
     return (
@@ -84,7 +87,7 @@ export const CartDemo = () => {
                 <li>Disable controls based on state</li>
             </ul>
             <div className={'cart-container'}>
-                <h4 data-testid="total">Total Items: </h4>
+                <h4 data-testid="total">Total Items: {totalItems}</h4>
                 <div className={'item-list-container'}>
                     {items.map(item => (
                         <div key={item.id} data-testid={`item-${item.id}`} className={'item-container'}>
