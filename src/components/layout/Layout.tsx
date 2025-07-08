@@ -13,6 +13,7 @@ export const Layout = () => {
                         <NavLink to="/">Home</NavLink>
                         <NavLink to="use-state-demo">Hook Example: <code>useState</code></NavLink>
                         <NavLink to="use-effect-demo">Hook Example: <code>useEffect</code></NavLink>
+                        <NavLink to="form-demo">Form Example</NavLink>
                     </nav>
                 </div>
                 <div className={'content-container'}>
